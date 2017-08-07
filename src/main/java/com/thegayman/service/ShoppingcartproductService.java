@@ -1,11 +1,9 @@
 package com.thegayman.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.thegayman.model.Shoppingcartproduct;
 import com.thegayman.mapper.ShoppingcartproductMapper;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 购物车商品(shoppingcartproduct)

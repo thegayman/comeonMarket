@@ -2,7 +2,7 @@ package com.thegayman.controller;
 
 import java.util.Date;
 import java.util.List;  
-import com.thegayman.model.Orderitem;
+import com.thegayman.model.OrderItem;
 import com.thegayman.service.OrderitemService;
 
 import org.apache.commons.lang3.StringUtils;

@@ -1,4 +1,8 @@
 package com.thegayman.mapper;
+
+import java.util.List;
+
+import com.thegayman.model.Product;
  
 /**
  * 商品(product)
@@ -8,5 +12,7 @@ package com.thegayman.mapper;
  */
 public interface ProductMapper  {
 	
- 
+	public List<Product> findAllProduct();
+	public Product findProductById(int id);
+	public List<Product> findProductByCategory(int cid);
 }

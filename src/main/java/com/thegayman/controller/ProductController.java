@@ -31,6 +31,27 @@ public class ProductController {
  
 	@Autowired
 	private ProductService productService;
+	
+	//查询首页展示商品
+	@RequestMapping("/findAll")
+	public List<Product> findAllProduct(){
+		return productService.findAllProduct();
+	}
+	
+	
+	//查询商品详情
+	@RequestMapping("/findId")
+	public Product findProductById(int id){
+		return productService.findProductById(id);
+	}
+	
+	
+	//根据一级目录查询商品
+	@RequestMapping("/findCategory")
+	public List<Product> findProductByCategory(int cid){
+		return productService.findProductByCategory(cid);
+	}
+		
 
 	
 }

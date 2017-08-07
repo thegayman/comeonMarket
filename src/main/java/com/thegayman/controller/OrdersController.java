@@ -1,31 +1,19 @@
 package com.thegayman.controller;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
-
-import com.thegayman.model.Orders;
-import com.thegayman.model.Shoppingcartproduct;
-import com.thegayman.model.User;
-import com.thegayman.service.OrdersService;
-import com.thegayman.service.ShoppingcartproductService;
-import com.thegayman.utils.ConstantUtil;
-
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.thegayman.model.Orders;
+import com.thegayman.service.OrdersService;
+import com.thegayman.utils.ConstantUtil;
 
 /**
  * order

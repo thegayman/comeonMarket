@@ -1,5 +1,7 @@
 package com.thegayman.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.thegayman.model.Product;
@@ -19,6 +21,22 @@ public class ProductService {
 
 	@Autowired
 	private ProductMapper productMapper;
+	//查询首页展示商品
+	public List<Product> findAllProduct(){
+		return productMapper.findAllProduct();
+	}
+	
+	
+	//查询商品详情
+	public Product findProductById(int id){
+		return productMapper.findProductById(id);
+	}
+	
+	
+	//根据一级目录查询商品
+	public List<Product> findProductByCategory(int cid){
+		return productMapper.findProductByCategory(cid);
+	}
 	
 
 }
