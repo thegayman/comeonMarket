@@ -12,7 +12,6 @@ public class Category {
 
 	private int cid;
 	private String cname;    //一级目录名称
-	List<Product> plist = new ArrayList<Product>();  //一级目录所包含的商品
 	
 	public int getCid() {
 		return cid;
@@ -26,12 +25,7 @@ public class Category {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
-	public List<Product> getPlist() {
-		return plist;
-	}
-	public void setPlist(List<Product> plist) {
-		this.plist = plist;
-	}
+
 	
 	
 }
