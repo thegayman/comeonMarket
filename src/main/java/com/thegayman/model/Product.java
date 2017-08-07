@@ -28,7 +28,7 @@ public class Product implements Serializable {
 	private String image;         /*商品图片*/
 	private String is_hot;        /*是否是热门商品*/
 	private Date pdate;           /*商品更新日期*/
-	private Category category;    /*商品所属一级目录*/
+	private int csid;   /*商品所属二级目录*/
 	public int getPid() {
 		return pid;
 	}
@@ -77,12 +77,13 @@ public class Product implements Serializable {
 	public void setPdate(Date pdate) {
 		this.pdate = pdate;
 	}
-	public Category getCategory() {
-		return category;
+	public int getCsid() {
+		return csid;
 	}
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setCsid(int csid) {
+		this.csid = csid;
 	}
+	
 	   
 	   
 }
