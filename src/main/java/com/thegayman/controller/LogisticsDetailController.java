@@ -32,7 +32,7 @@ public class LogisticsDetailController {
 	@Autowired
 	private LogisticsDetailService logisticsDetailService;
 
-	
+	  
 	
 	
 }
