@@ -89,6 +89,7 @@ create table product
 (
    pid                  int not null,
    csid                  int,          /*商品所属的二级目录*/
+   stock                 int,          /*库存*/         
    pname                varchar(100), /*商品名字*/
    market_price         float,        /*市场价*/
    pdesc                varchar(1000), /*商品描述*/
