@@ -18,5 +18,7 @@ public interface OrdersMapper  {
 	 * 
 	 */
 	public int deleteByIds(@Param("ids") String[] ids);
+	
+	
 
 }
