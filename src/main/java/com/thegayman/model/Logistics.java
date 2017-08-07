@@ -1,10 +1,9 @@
 package com.thegayman.model;
 
 import java.io.Serializable;
-import java.util.Date; 
-import org.springframework.format.annotation.DateTimeFormat;
+import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.core.annotation.Order;
 
 
 
@@ -20,136 +19,36 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class Logistics implements Serializable {
 	private static final long serialVersionUID = 1L;
 
- 
-	private String resourceid;//
-	private String orderid;//
-	private String addres;//
-	private String recipient;//
-	private String shipaddress;//
-	private String consigner;//
-	private String company;//
-	private String statu;//
-	private String recipientphone;//
-	private String consignerphone;//
-
-	/**
-	 * 设置：
-	 */
-	public void setResourceid(String resourceid) {
-		this.resourceid = resourceid;
+	private int logId;
+	private String address;   //物流所到地址
+	private Date time;        //物流更新时间
+	private Order order;      //物流中的订单
+	
+	public int getLogId() {
+		return logId;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getResourceid() {
-		return resourceid;
+	public void setLogId(int logId) {
+		this.logId = logId;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setOrderid(String orderid) {
-		this.orderid = orderid;
+	public String getAddress() {
+		return address;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getOrderid() {
-		return orderid;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setAddres(String addres) {
-		this.addres = addres;
+	public Date getTime() {
+		return time;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getAddres() {
-		return addres;
+	public void setTime(Date time) {
+		this.time = time;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setRecipient(String recipient) {
-		this.recipient = recipient;
+	public Order getOrder() {
+		return order;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getRecipient() {
-		return recipient;
+	public void setOrder(Order order) {
+		this.order = order;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setShipaddress(String shipaddress) {
-		this.shipaddress = shipaddress;
-	}
-	/**
-	 * 获取：
-	 */
-	public String getShipaddress() {
-		return shipaddress;
-	}
-	/**
-	 * 设置：
-	 */
-	public void setConsigner(String consigner) {
-		this.consigner = consigner;
-	}
-	/**
-	 * 获取：
-	 */
-	public String getConsigner() {
-		return consigner;
-	}
-	/**
-	 * 设置：
-	 */
-	public void setCompany(String company) {
-		this.company = company;
-	}
-	/**
-	 * 获取：
-	 */
-	public String getCompany() {
-		return company;
-	}
-	/**
-	 * 设置：
-	 */
-	public void setStatu(String statu) {
-		this.statu = statu;
-	}
-	/**
-	 * 获取：
-	 */
-	public String getStatu() {
-		return statu;
-	}
-	/**
-	 * 设置：
-	 */
-	public void setRecipientphone(String recipientphone) {
-		this.recipientphone = recipientphone;
-	}
-	/**
-	 * 获取：
-	 */
-	public String getRecipientphone() {
-		return recipientphone;
-	}
-	/**
-	 * 设置：
-	 */
-	public void setConsignerphone(String consignerphone) {
-		this.consignerphone = consignerphone;
-	}
-	/**
-	 * 获取：
-	 */
-	public String getConsignerphone() {
-		return consignerphone;
-	}
+	
+	
+	
 }

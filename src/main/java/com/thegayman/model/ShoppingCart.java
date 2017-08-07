@@ -1,10 +1,8 @@
 package com.thegayman.model;
 
 import java.io.Serializable;
-import java.util.Date; 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -19,59 +17,34 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  
 public class ShoppingCart implements Serializable {
 	private static final long serialVersionUID = 1L;
-
- 
-	private String resourseid;//
-	private Integer amount;//
-	private Integer quantity;//
-	private String userid;//
-
-	/**
-	 * 设置：
-	 */
-	public void setResourseid(String resourseid) {
-		this.resourseid = resourseid;
+	
+	private int carId;
+	private int count;                                          /*商品购买数量*/
+	private double proPrice;                                    /*商品价格*/
+	private List<Product> plist = new ArrayList<Product>();     /*一个购物车里可以有多个商品*/
+	public int getCarId() {
+		return carId;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getResourseid() {
-		return resourseid;
+	public void setCarId(int carId) {
+		this.carId = carId;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setAmount(Integer amount) {
-		this.amount = amount;
+	public int getCount() {
+		return count;
 	}
-	/**
-	 * 获取：
-	 */
-	public Integer getAmount() {
-		return amount;
+	public void setCount(int count) {
+		this.count = count;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
+	public double getProPrice() {
+		return proPrice;
 	}
-	/**
-	 * 获取：
-	 */
-	public Integer getQuantity() {
-		return quantity;
+	public void setProPrice(double proPrice) {
+		this.proPrice = proPrice;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public List<Product> getPlist() {
+		return plist;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getUserid() {
-		return userid;
+	public void setPlist(List<Product> plist) {
+		this.plist = plist;
 	}
+	
 }

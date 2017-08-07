@@ -19,98 +19,70 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  
 public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	 
-	private String resourceid;//
-	private String productname;//
-	private Integer price;//
-	private String detail;//
-	private String classify;//
-	private String productaddress;//
-	private Double carriage;//
-
-	/**
-	 * 设置：
-	 */
-	public void setResourceid(String resourceid) {
-		this.resourceid = resourceid;
+	   
+	private int pid;
+	private String pname;         /*商品名字*/
+	private double market_price;  /*市场价*/
+	private String pdesc;         /*商品描述*/
+	private double shop_price;    /*商城价*/
+	private String image;         /*商品图片*/
+	private String is_hot;        /*是否是热门商品*/
+	private Date pdate;           /*商品更新日期*/
+	private Category category;    /*商品所属一级目录*/
+	public int getPid() {
+		return pid;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getResourceid() {
-		return resourceid;
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setProductname(String productname) {
-		this.productname = productname;
+	public String getPname() {
+		return pname;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getProductname() {
-		return productname;
+	public void setPname(String pname) {
+		this.pname = pname;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setPrice(Integer price) {
-		this.price = price;
+	public double getMarket_price() {
+		return market_price;
 	}
-	/**
-	 * 获取：
-	 */
-	public Integer getPrice() {
-		return price;
+	public void setMarket_price(double market_price) {
+		this.market_price = market_price;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setDetail(String detail) {
-		this.detail = detail;
+	public String getPdesc() {
+		return pdesc;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getDetail() {
-		return detail;
+	public void setPdesc(String pdesc) {
+		this.pdesc = pdesc;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setClassify(String classify) {
-		this.classify = classify;
+	public double getShop_price() {
+		return shop_price;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getClassify() {
-		return classify;
+	public void setShop_price(double shop_price) {
+		this.shop_price = shop_price;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setProductaddress(String productaddress) {
-		this.productaddress = productaddress;
+	public String getImage() {
+		return image;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getProductaddress() {
-		return productaddress;
+	public void setImage(String image) {
+		this.image = image;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setCarriage(Double carriage) {
-		this.carriage = carriage;
+	public String getIs_hot() {
+		return is_hot;
 	}
-	/**
-	 * 获取：
-	 */
-	public Double getCarriage() {
-		return carriage;
+	public void setIs_hot(String is_hot) {
+		this.is_hot = is_hot;
 	}
+	public Date getPdate() {
+		return pdate;
+	}
+	public void setPdate(Date pdate) {
+		this.pdate = pdate;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	   
+	   
 }

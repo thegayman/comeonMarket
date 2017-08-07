@@ -26,70 +26,58 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 
-	private String resourceid;//
-	private String user;//
-	private String password;//
-	private String username;//
-	private String phone;//
-
-	/**
-	 * 设置：
-	 */
-	public void setResourceid(String resourceid) {
-		this.resourceid = resourceid;
+	private int uid;   
+	private String loginname;  //登陆名
+	private String password;   //登陆密码
+	private String username;   //用户姓名
+	private String email;      //用户邮箱
+	private String phone;      //用户电话
+	private String address;    //用户地址
+	public int getUid() {
+		return uid;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getResourceid() {
-		return resourceid;
+	public void setUid(int uid) {
+		this.uid = uid;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setUser(String user) {
-		this.user = user;
+	public String getLoginname() {
+		return loginname;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getUser() {
-		return user;
+	public void setLoginname(String loginname) {
+		this.loginname = loginname;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	/**
-	 * 获取：
-	 */
 	public String getPassword() {
 		return password;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setUsername(String username) {
-		this.username = username;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	/**
-	 * 获取：
-	 */
 	public String getUsername() {
 		return username;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	/**
-	 * 获取：
-	 */
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getPhone() {
 		return phone;
 	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	
+	
+	
+	
 }

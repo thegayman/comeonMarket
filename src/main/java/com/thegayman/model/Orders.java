@@ -21,98 +21,64 @@ public class Orders implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 
-	private String resourceid;//
-	private String orderNumber;//
-	private String userid;//
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")//出
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")//进
-	private Date orderDate;//
-	private String status;//
-	private String address;//
-	private Double carriage;//
-
-	/**
-	 * 设置：
-	 */
-	public void setResourceid(String resourceid) {
-		this.resourceid = resourceid;
+	private int oid;
+	private double orderTotal;   //订单总价格
+	private Date orderTime;      //下单时间
+	private String state;        //订单的状态（未发货/已发货/已收货）
+	private String name;         //用户名字
+	private String phone;        //用 户电话
+	private String address;      //用户地址
+	private User user;           //订单所属用户
+	public int getOid() {
+		return oid;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getResourceid() {
-		return resourceid;
+	public void setOid(int oid) {
+		this.oid = oid;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setOrderNumber(String orderNumber) {
-		this.orderNumber = orderNumber;
+	public double getOrderTotal() {
+		return orderTotal;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getOrderNumber() {
-		return orderNumber;
+	public void setOrderTotal(double orderTotal) {
+		this.orderTotal = orderTotal;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public Date getOrderTime() {
+		return orderTime;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getUserid() {
-		return userid;
+	public void setOrderTime(Date orderTime) {
+		this.orderTime = orderTime;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
+	public String getState() {
+		return state;
 	}
-	/**
-	 * 获取：
-	 */
-	public Date getOrderDate() {
-		return orderDate;
+	public void setState(String state) {
+		this.state = state;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setStatus(String status) {
-		this.status = status;
+	public String getName() {
+		return name;
 	}
-	/**
-	 * 获取：
-	 */
-	public String getStatus() {
-		return status;
+	public void setName(String name) {
+		this.name = name;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setAddress(String address) {
-		this.address = address;
+	public String getPhone() {
+		return phone;
 	}
-	/**
-	 * 获取：
-	 */
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getAddress() {
 		return address;
 	}
-	/**
-	 * 设置：
-	 */
-	public void setCarriage(Double carriage) {
-		this.carriage = carriage;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	/**
-	 * 获取：
-	 */
-	public Double getCarriage() {
-		return carriage;
+	public User getUser() {
+		return user;
 	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	
+	
+	
 }
