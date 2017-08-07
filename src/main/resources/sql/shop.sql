@@ -88,7 +88,7 @@ create table orders
 create table product
 (
    pid                  int not null,
-   cid                  int,          /*商品所属的一级目录*/
+   csid                  int,          /*商品所属的二级目录*/
    pname                varchar(100), /*商品名字*/
    market_price         float,        /*市场价*/
    pdesc                varchar(1000), /*商品描述*/
@@ -125,25 +125,3 @@ create table user
    address              varchar(100),    /*地址*/
    primary key (uid)
 );
-
-alter table categorysecond add constraint FK_Reference_7 foreign key (cid)
-      references category (cid) on delete restrict on update restrict;
-
-alter table logistics add constraint FK_Reference_4 foreign key (oid)
-      references orders (oid) on delete cascade on update cascade;
-
-alter table orderItem add constraint FK_Reference_2 foreign key (oid)
-      references orders (oid) on delete cascade on update cascade;
-
-alter table orderItem add constraint FK_Reference_3 foreign key (pid)
-      references product (pid) on delete cascade on update cascade;
-
-alter table orders add constraint FK_Reference_1 foreign key (uid)
-      references user (uid) on delete cascade on update cascade;
-
-alter table product add constraint FK_Reference_6 foreign key (cid)
-      references category (cid) on delete restrict on update restrict;
-
-alter table shoppingCar add constraint FK_Reference_5 foreign key (pid)
-      references product (pid) on delete cascade on update cascade;
-
