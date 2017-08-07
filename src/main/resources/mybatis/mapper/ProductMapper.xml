@@ -1,7 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.thegayman.mapper.ProductMapper" >
+     <resultMap id="BaseResultMap" type="com.thegayman.model.Product" >
+        <id column="pid" property="pid" jdbcType="BIGINT" />
+        <result column="pame" property="pame" jdbcType="VARCHAR" />
+        <result column="market_price" property="market_price" jdbcType="FLOAT" />
+        <result column="pdesc" property="pdesc" jdbcType="VARCHAR" />
+        <result column="shop_price" property="shop_price" jdbcType="FLOAT" />
+        <result column="image" property="image" jdbcType="VARCHAR" />
+        <result column="is_hot" property="is_hot" jdbcType="VARCHAR" />
+        <result column="pdate" property="pdate" jdbcType="TIME"/>
+        <result column="csid" property="csid" jdbcType="BIGINT" />
+    </resultMap>
+    
+    <sql id="Base_Column_List" >
+        pid, pname, market_price,pdesc,shop_price,image,is_hot,pdate,csid
+    </sql>
 
-<mapper namespace="com.thegayman.mapper.ProductMapper">
-	
-	 
+    <select id="findAllProductByHot" resultMap="BaseResultMap"  >
+       SELECT 
+       <include refid="Base_Column_List" />
+	   FROM product WHERE is_hot=1 limit 1,8
+    </select>
+    
+    
+    <select id="findAllProductByTime" resultMap="BaseResultMap"  >
+       SELECT 
+       <include refid="Base_Column_List" />
+	   FROM product ORDER BY pdate DESC limit 1,8
+    </select>
+
+    <select id="findProductById" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+        SELECT 
+       <include refid="Base_Column_List" />
+	   FROM product
+	   WHERE pid = #{pid}
+    </select>
+
+     <select id="findProductByCategory" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+        SELECT 
+       <include refid="Base_Column_List" />
+	   FROM product
+	   WHERE csid = #{csid}
+    </select>
+
 </mapper>

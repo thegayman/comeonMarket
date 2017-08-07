@@ -12,7 +12,7 @@ import com.thegayman.interception.RestfulInterceptor;
  
 
 
-//@MapperScan("com.thegayman.mapper")
+@MapperScan("com.thegayman.mapper")
 @SpringBootApplication
 @ServletComponentScan
 public class ComeonMarketApplication extends WebMvcConfigurerAdapter{

@@ -21,11 +21,16 @@ public class ProductService {
 
 	@Autowired
 	private ProductMapper productMapper;
-	//查询首页展示商品
-	public List<Product> findAllProduct(){
-		return productMapper.findAllProduct();
+	
+	//查询首页热门商品
+	public List<Product> findAllProductByHot(){
+		return productMapper.findAllProductByHot();
 	}
 	
+	//查询首页最新商品
+	public List<Product> findAllProductByTime(){
+		return productMapper.findAllProductByTime();
+	}
 	
 	//查询商品详情
 	public Product findProductById(int id){

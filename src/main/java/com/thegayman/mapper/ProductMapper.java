@@ -12,7 +12,8 @@ import com.thegayman.model.Product;
  */
 public interface ProductMapper  {
 	
-	public List<Product> findAllProduct();
+	public List<Product> findAllProductByHot();
+	public List<Product> findAllProductByTime();
 	public Product findProductById(int id);
 	public List<Product> findProductByCategory(int cid);
 }
