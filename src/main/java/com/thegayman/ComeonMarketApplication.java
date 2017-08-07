@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 
-@MapperScan("com.thegayman.mapper")
+//@MapperScan("com.thegayman.mapper")
 @SpringBootApplication
 @ServletComponentScan
 public class ComeonMarketApplication {
