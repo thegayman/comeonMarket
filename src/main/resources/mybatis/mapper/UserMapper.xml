@@ -13,4 +13,12 @@
     </insert>
     
      
+     <select id="checkUserExis" resultType="int" parameterType="string">
+       select count(*) from user where loginname=#{username}
+     </select>
+     
+     <select id="checkpassword" resultType="com.thegayman.model.User">
+       select * from user where loginname=#{username} and password =#{password}
+     </select>
+     
 </mapper>

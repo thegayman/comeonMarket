@@ -1,5 +1,7 @@
 package com.thegayman.mapper;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.thegayman.model.User;  
 
 /**
@@ -14,4 +16,14 @@ public interface UserMapper  {
 	 * @param user
 	 */
 	public void insert(User user);
+	/**
+	 * 保存用户
+	 * @param user
+	 */
+	public int checkUserExis(@Param("username")String username);
+	/**
+	 * 保存用户
+	 * @param user
+	 */
+	public User checkpassword(@Param("username")String username,@Param("password")String password);
 } 

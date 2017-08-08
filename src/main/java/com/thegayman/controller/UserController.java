@@ -1,7 +1,13 @@
 package com.thegayman.controller;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+ 
 
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
@@ -12,6 +18,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thegayman.model.User;
 import com.thegayman.service.UserService;
+import com.thegayman.utils.ConstantUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -73,8 +80,33 @@ public class UserController {
 	 * @param request
 	 * @return
 	 */
-	public String login(HttpServletRequest request){
-		return "1";
+	@RequestMapping(value = "login" )
+	public List<Map<String,Object>> login(HttpServletRequest request){
+		List<Map<String,Object>> message = new ArrayList<Map<String,Object>>();
+		Map<String,Object> map = new HashMap<String,Object>();
+		String username =request.getParameter("username");
+		String password =request.getParameter("password");
+		Boolean ecist = this.userService.checkUser(username);
+		if (!ecist) {
+			map.put("code", 1);
+
+			map.put("message", "用户不存在");
+			message.add(map);
+			return message;
+		}
+		User  user = this.userService.checkpassword(username, password);
+		if (user== null) {
+			map.put("code", 1);
+			map.put("message", "用户密码错误存在");
+			message.add(map);
+			return message;	
+		}
+		request.setAttribute(ConstantUtil.CURRENT_USER, user);	
+		map.put("code", 0);
+		map.put("user", user);
+		map.put("message", "登录成功");
+		message.add(map);
+		return message;
 	}
 
 }

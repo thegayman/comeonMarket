@@ -27,4 +27,13 @@ public class UserService {
 	public void save(User user) {
 		this.userMapper.insert(user);;
 	}
+	
+	public Boolean checkUser(String username){
+		int num = this.userMapper.checkUserExis(username);
+		return num>0?true:false;
+	}
+	
+	public User checkpassword(String username ,String password){
+		return this.userMapper.checkpassword(username, password) ;
+	}
 }
