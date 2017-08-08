@@ -38,10 +38,20 @@
     </select>
 
      <select id="findProductByCategory" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+        SELECT   a.*
+	   FROM product a,category b where a.csid=b.csid	  
+	     <if test="  cid != null">
+			and b.cid = #{cid}
+		</if>
+		 
+    </select>
+    <select id="findProductByCategorySecond" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
         SELECT 
        <include refid="Base_Column_List" />
 	   FROM product
-	   WHERE csid = #{csid}
+		 <if test=" csid != null">
+			and csid = #{csid}
+		</if>
     </select>
 
 </mapper>

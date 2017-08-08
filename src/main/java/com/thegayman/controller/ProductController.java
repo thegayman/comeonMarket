@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 
+
+
 import javax.servlet.http.HttpServletRequest;
 /**
  * 商品(product)
@@ -31,15 +33,14 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2017-07-27 11:07:10
  */
 @RestController
-@RequestMapping("/product")
-@Controller
+@RequestMapping("/product") 
 public class ProductController {
  
 	@Autowired
 	private ProductService productService;
 	
 	//查询首页热门商品
-	@RequestMapping("/findAllByHot")
+	@RequestMapping(value="/findAllByHot", method = RequestMethod.GET)
 	public List<Product> findAllProductByHot(){
 		return productService.findAllProductByHot();
 	}
@@ -61,8 +62,16 @@ public class ProductController {
 	
 	//根据二级目录查询商品
 	@RequestMapping("/findByCategory")
-	public List<Product> findProductByCategory(int csid){
-		return productService.findProductByCategory(csid);
+	public List<Product> findProductByCategory(HttpServletRequest request){
+		String cid =request.getParameter("cid");
+		String csid =request.getParameter("csid");
+		if(cid!=null && StringUtils.isNoneBlank(cid)){
+			return productService.findProductByCategory(Integer.parseInt(cid) );
+		}
+		if(csid!=null && StringUtils.isNoneBlank(csid)){
+			return productService.findProductByCategory(Integer.parseInt(csid) );
+		}
+		return null;
 	}
 		
 

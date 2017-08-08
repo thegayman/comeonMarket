@@ -16,4 +16,5 @@ public interface ProductMapper  {
 	public List<Product> findAllProductByTime();
 	public Product findProductById(int id);
 	public List<Product> findProductByCategory(int cid);
+	public List<Product> findProductByCategorySecond(int csid);
 }

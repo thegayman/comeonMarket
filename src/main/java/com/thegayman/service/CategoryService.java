@@ -34,4 +34,10 @@ public class CategoryService {
 	public List<CategorySecond> findSecondByCid(int cid){
 		return categorymapper.findSecondByCid(cid);
 	}
+
+	public List<Category> queryAll() {
+		// TODO Auto-generated method stub
+		return this.categorymapper.queryAll();
+	}
+	
 }

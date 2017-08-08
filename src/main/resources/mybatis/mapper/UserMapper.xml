@@ -6,9 +6,10 @@
     <insert id="insert" parameterType="com.thegayman.model.User" >
        INSERT INTO 
        		user
-       		(resourceid, user, password, username, phone )
+ 
+       		(uid, loginname, password, username, email, phone, address)
        	VALUES
-       		(#{resourceid}, #{user}, #{password}, #{username}, #{phone} )
+       		(#{uid}, #{loginname}, #{password}, #{username}, #{email}, #{phone}, #{address} )
     </insert>
     
      

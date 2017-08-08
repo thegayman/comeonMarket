@@ -20,4 +20,12 @@
 	<select id="findSecondByCid" resultType="com.thegayman.model.CategorySecond"  >
        SELECT csid,csname,cid FROM categorysecond where cid = #{cid}
     </select>
+    
+   <select id="queryAll" resultType="com.thegayman.model.Category"  >
+       SELECT * FROM category  
+    </select>
+      <sql id="Base_Column_List" >
+        cid, cname
+    </sql>
+    
 </mapper>

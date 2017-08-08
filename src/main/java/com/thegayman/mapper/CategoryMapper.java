@@ -14,4 +14,7 @@ public interface CategoryMapper {
 
 	public List<Category> findAllCategory();
 	public List<CategorySecond> findSecondByCid(int cid);
+	public List<Category> queryAll()  ;
+	
+	 
 }

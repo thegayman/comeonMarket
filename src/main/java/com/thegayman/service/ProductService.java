@@ -43,5 +43,9 @@ public class ProductService {
 		return productMapper.findProductByCategory(cid);
 	}
 	
-
+	//根据二级目录查询商品
+		public List<Product> findProductByCategoryScond(int csid){
+			return productMapper.findProductByCategorySecond(csid);
+		}
+		
 }

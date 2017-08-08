@@ -10,7 +10,7 @@ public class CategorySecond {
 
 	private int csid;
 	private String csname;    //二级目录名称
-	private int cid; //所属一级目录
+	private Category category; //所属一级目录
 	
 	public int getCsid() {
 		return csid;
@@ -24,13 +24,12 @@ public class CategorySecond {
 	public void setCsname(String csname) {
 		this.csname = csname;
 	}
-	public int getCid() {
-		return cid;
+	public Category getCategory() {
+		return category;
 	}
-	public void setCid(int cid) {
-		this.cid = cid;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
-	
 	
 	
 }
