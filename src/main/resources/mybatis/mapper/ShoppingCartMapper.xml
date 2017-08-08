@@ -9,7 +9,10 @@
     <select id="addBefore"  resultType="java.lang.Integer" parameterType="com.thegayman.model.ShoppingCart" >
       select count(1) from shoppingcar where carid=#{carId} and #{pid}
     </select>
-    <update id="addBefore"  parameterType="com.thegayman.model.ShoppingCart">
+    <update id="update"  parameterType="com.thegayman.model.ShoppingCart">
    	 update shoppingcar set count=count+#{count} where carid=#{carId} and pid=#{pid}
     </update>
+    <select id="show" resultType="map" >
+      select * from product a right JOIN shoppingcar b on a.pid=b.pid  and  a.pid in(select pid from shoppingcar where carId=#{uid})
+    </select>
 </mapper>

@@ -10,8 +10,7 @@
         <result column="image" property="image" jdbcType="VARCHAR" />
         <result column="is_hot" property="is_hot" jdbcType="VARCHAR" />
         <result column="pdate" property="pdate" jdbcType="TIME"/>
-        <result column="stock" property="stock" jdbcType="BIGINT" />
-        
+        <result column="stock" property="stock" jdbcType="BIGINT" /> 
         <result column="csid" property="csid" jdbcType="BIGINT" />
     </resultMap>
     

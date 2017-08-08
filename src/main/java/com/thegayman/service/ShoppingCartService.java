@@ -1,9 +1,13 @@
 package com.thegayman.service;
 
-import org.springframework.stereotype.Service; 
+import org.springframework.stereotype.Service;
 
+import com.thegayman.model.Product;
 import com.thegayman.model.ShoppingCart;
 import com.thegayman.mapper.ShoppingCartMapper;
+
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -30,6 +34,9 @@ public class ShoppingCartService   {
 		}else {
 			return shoppingCartMapper.add(shoppingCart);
 		}
+	}
+	public List<Map<String, Object>> show(int uid) {		
+		return shoppingCartMapper.show(uid);
 	}
 
 }

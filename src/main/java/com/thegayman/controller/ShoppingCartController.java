@@ -1,5 +1,6 @@
 package com.thegayman.controller;
 
+import com.thegayman.model.Product;
 import com.thegayman.model.ShoppingCart;
 import com.thegayman.service.ShoppingCartService;
 
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
-
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 /**
@@ -45,5 +46,22 @@ public class ShoppingCartController {
 			e.printStackTrace();
 		}
 		return shoppingCartService.add(shoppingCart);
+	}
+	/**
+	 * 通过用户id显示所有的购物车信息
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "show", method = RequestMethod.POST)
+	public List<Map<String, Object>> show(HttpServletRequest request) {
+		int uid=0;
+		String parms=request.getParameter("uid");
+		try {
+			uid = MAPPER.readValue(parms, Integer.class);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return shoppingCartService.show(uid);
 	}
 }
