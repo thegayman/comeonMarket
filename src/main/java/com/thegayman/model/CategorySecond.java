@@ -8,28 +8,30 @@ package com.thegayman.model;
  */
 public class CategorySecond {
 
-	private int csid;
+	private Integer csid;
 	private String csname;    //二级目录名称
-	private Category category; //所属一级目录
+	private Integer cid; //所属一级目录
 	
-	public int getCsid() {
+	public Integer getCsid() {
 		return csid;
 	}
-	public void setCsid(int csid) {
-		this.csid = csid;
-	}
+ 
 	public String getCsname() {
 		return csname;
 	}
 	public void setCsname(String csname) {
 		this.csname = csname;
 	}
-	public Category getCategory() {
-		return category;
+	public Integer getCid() {
+		return cid;
 	}
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setCid(Integer cid) {
+		this.cid = cid;
 	}
+	public void setCsid(Integer csid) {
+		this.csid = csid;
+	}
+	 
 	
 	
 }

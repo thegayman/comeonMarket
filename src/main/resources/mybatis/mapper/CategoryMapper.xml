@@ -5,7 +5,7 @@
         <id column="cid" property="cid" jdbcType="BIGINT" />
         <result column="cname" property="cname" jdbcType="VARCHAR" />
     </resultMap>
-    
+  
     <sql id="Base_Column_List" >
         cid, cname
     </sql>
@@ -24,8 +24,6 @@
    <select id="queryAll" resultType="com.thegayman.model.Category"  >
        SELECT * FROM category  
     </select>
-      <sql id="Base_Column_List" >
-        cid, cname
-    </sql>
+   
     
 </mapper>

@@ -10,13 +10,13 @@ import java.util.List;
  */
 public class Category {
 
-	private int cid;
+	private Integer cid;
 	private String cname;    //一级目录名称
 	
-	public int getCid() {
+	public Integer getCid() {
 		return cid;
 	}
-	public void setCid(int cid) {
+	public void setCid(Integer cid) {
 		this.cid = cid;
 	}
 	public String getCname() {

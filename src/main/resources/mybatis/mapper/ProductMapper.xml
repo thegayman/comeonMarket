@@ -10,11 +10,13 @@
         <result column="image" property="image" jdbcType="VARCHAR" />
         <result column="is_hot" property="is_hot" jdbcType="VARCHAR" />
         <result column="pdate" property="pdate" jdbcType="TIME"/>
+        <result column="stock" property="stock" jdbcType="BIGINT" />
+        
         <result column="csid" property="csid" jdbcType="BIGINT" />
     </resultMap>
     
     <sql id="Base_Column_List" >
-        pid, pname, market_price,pdesc,shop_price,image,is_hot,pdate,csid
+        pid, pname, market_price,pdesc,shop_price,image,is_hot,pdate,csid,stock
     </sql>
 
     <select id="findAllProductByHot" resultMap="BaseResultMap"  >
@@ -30,28 +32,31 @@
 	   FROM product ORDER BY pdate DESC limit 1,8
     </select>
 
-    <select id="findProductById" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+    <select id="findProductById"  resultMap="BaseResultMap" >
         SELECT 
        <include refid="Base_Column_List" />
 	   FROM product
 	   WHERE pid = #{pid}
     </select>
 
-     <select id="findProductByCategory" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+     <select id="findProductByCategory"   resultMap="BaseResultMap" >
         SELECT   a.*
-	   FROM product a,category b where a.csid=b.csid	  
-	     <if test="  cid != null">
-			and b.cid = #{cid}
-		</if>
-		 
+	   FROM product a,categorysecond b where a.csid=b.csid	    
+			and b.cid = #{cid}	LIMIT #{page1},#{page2} 
+				 
     </select>
-    <select id="findProductByCategorySecond" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
-        SELECT 
-       <include refid="Base_Column_List" />
-	   FROM product
-		 <if test=" csid != null">
-			and csid = #{csid}
-		</if>
+    <select id="findProductByCategorySecond" resultMap="BaseResultMap" >
+        SELECT   *  FROM product	where 	 
+			  csid = #{csid} 	LIMIT #{page1},#{page2} 
     </select>
 
+ <select id="querycountCategory" resultType="int"  >
+        SELECT  count(*)  
+	   FROM product a,categorysecond b where a.csid=b.csid	    
+			and b.cid = #{cid}		  
+    </select>
+     <select id="querycountCategorySecond" resultType="int" >
+        SELECT  count(*) FROM product where	 
+			  csid = #{csid} 		  
+    </select>
 </mapper>

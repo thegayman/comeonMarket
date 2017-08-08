@@ -2,6 +2,8 @@ package com.thegayman.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.thegayman.model.Product;
  
 /**
@@ -15,6 +17,9 @@ public interface ProductMapper  {
 	public List<Product> findAllProductByHot();
 	public List<Product> findAllProductByTime();
 	public Product findProductById(int id);
-	public List<Product> findProductByCategory(int cid);
-	public List<Product> findProductByCategorySecond(int csid);
+	public List<Product> findProductByCategory(@Param("cid")int cid, @Param("page1")int page1,@Param("page2") int page2);
+	public List<Product> findProductByCategorySecond( @Param("csid")int csid,@Param("page1") int page1,@Param("page2") int page2);
+    public  int querycountCategory(@Param("cid")int cid);
+    public  int querycountCategorySecond(@Param("csid")int csid);
+    
 }

@@ -29,6 +29,14 @@ public class Product implements Serializable {
 	private String is_hot;        /*是否是热门商品*/
 	private Date pdate;           /*商品更新日期*/
 	private int csid;   /*商品所属二级目录*/
+	private int stock;   /*商品所属二级目录*/ 
+	
+	public int getStock() {
+		return stock;
+	}
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
 	public int getPid() {
 		return pid;
 	}
