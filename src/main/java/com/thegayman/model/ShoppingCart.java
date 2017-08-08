@@ -21,7 +21,7 @@ public class ShoppingCart implements Serializable {
 	private int carId;
 	private int count;                                          /*商品购买数量*/
 	private double proPrice;                                    /*商品价格*/
-	private List<Product> plist = new ArrayList<Product>();     /*一个购物车里可以有多个商品*/
+	private int pid;											/*商品id*/
 	public int getCarId() {
 		return carId;
 	}
@@ -40,11 +40,11 @@ public class ShoppingCart implements Serializable {
 	public void setProPrice(double proPrice) {
 		this.proPrice = proPrice;
 	}
-	public List<Product> getPlist() {
-		return plist;
+	public int getPid() {
+		return pid;
 	}
-	public void setPlist(List<Product> plist) {
-		this.plist = plist;
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
 	
 }

@@ -19,6 +19,17 @@ public class ShoppingCartService   {
 
 	@Autowired
 	private ShoppingCartMapper shoppingCartMapper;
-	
+	/**
+	 * 商品加入购物车,如果商品已经存在,更新数据,否则加入数据行
+	 * @param shoppingCart
+	 * @return
+	 */
+	public int add(ShoppingCart shoppingCart) {
+		if(shoppingCartMapper.addBefore(shoppingCart)>0) {
+			return shoppingCartMapper.update(shoppingCart);
+		}else {
+			return shoppingCartMapper.add(shoppingCart);
+		}
+	}
 
 }

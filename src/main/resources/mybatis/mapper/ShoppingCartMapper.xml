@@ -3,6 +3,13 @@
 
 <mapper namespace="com.thegayman.mapper.ShoppingCartMapper">
 	
- 
-    
+ 	<insert id="add" parameterType="com.thegayman.model.ShoppingCart" >
+       	insert into shoppingcar (carid,pid,count,proprice) value(#{carId},#{pid},#{count},#{proPrice})
+    </insert>
+    <select id="addBefore"  resultType="java.lang.Integer" parameterType="com.thegayman.model.ShoppingCart" >
+      select count(1) from shoppingcar where carid=#{carId} and #{pid}
+    </select>
+    <update id="addBefore"  parameterType="com.thegayman.model.ShoppingCart">
+   	 update shoppingcar set count=count+#{count} where carid=#{carId} and pid=#{pid}
+    </update>
 </mapper>
