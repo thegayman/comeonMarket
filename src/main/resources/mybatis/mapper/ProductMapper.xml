@@ -22,14 +22,14 @@
     <select id="findAllProductByHot" resultMap="BaseResultMap"  >
        SELECT 
        <include refid="Base_Column_List" />
-	   FROM product WHERE is_hot=1 limit 1,8
+	   FROM product WHERE is_hot=1 limit 1,10
     </select>
     
     
     <select id="findAllProductByTime" resultMap="BaseResultMap"  >
        SELECT 
        <include refid="Base_Column_List" />
-	   FROM product ORDER BY pdate DESC limit 1,8
+	   FROM product ORDER BY pdate DESC limit 1,10
     </select>
 
     <select id="findProductById"  resultMap="BaseResultMap" >
