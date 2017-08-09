@@ -7,12 +7,18 @@
        	insert into shoppingcar (carid,pid,count,proprice) value(#{carId},#{pid},#{count},#{proPrice})
     </insert>
     <select id="addBefore"  resultType="java.lang.Integer" parameterType="com.thegayman.model.ShoppingCart" >
-      select count(1) from shoppingcar where carid=#{carId} and #{pid}
+      select count(1) from shoppingcar where carid=#{carId} and pid=#{pid}
     </select>
     <update id="update"  parameterType="com.thegayman.model.ShoppingCart">
    	 update shoppingcar set count=count+#{count} where carid=#{carId} and pid=#{pid}
     </update>
-    <select id="show" resultType="map" >
+    <select id="show" resultType="com.thegayman.model.OrderAll" >
       select * from product a right JOIN shoppingcar b on a.pid=b.pid  and  a.pid in(select pid from shoppingcar where carId=#{uid})
     </select>
+    <select id="querycarcount" parameterType="java.lang.Integer" resultType="java.lang.Integer" >
+      select count(1) from shoppingcar where carid=#{uid}
+    </select>
+    <delete id="del">
+    	DELETE from shoppingcar where carid=#{pid} and pid in(select pid from orderitem  where oid=#{oid})
+    </delete>
 </mapper>

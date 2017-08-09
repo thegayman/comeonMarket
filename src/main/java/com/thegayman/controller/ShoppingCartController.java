@@ -1,5 +1,6 @@
 package com.thegayman.controller;
 
+import com.thegayman.model.OrderAll;
 import com.thegayman.model.Product;
 import com.thegayman.model.ShoppingCart;
 import com.thegayman.service.ShoppingCartService;
@@ -53,7 +54,7 @@ public class ShoppingCartController {
 	 * @return
 	 */
 	@RequestMapping(value = "show", method = RequestMethod.POST)
-	public List<Map<String, Object>> show(HttpServletRequest request) {
+	public List<OrderAll> show(HttpServletRequest request) {
 		int uid=0;
 		String parms=request.getParameter("uid");
 		try {
@@ -63,5 +64,17 @@ public class ShoppingCartController {
 			e.printStackTrace();
 		}
 		return shoppingCartService.show(uid);
+	}
+	@RequestMapping(value = "querycount", method = RequestMethod.POST)
+	public int querycarcount(HttpServletRequest request) {
+		int uid=0;
+		String parms=request.getParameter("uid");
+		try {
+			uid = MAPPER.readValue(parms, Integer.class);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return shoppingCartService.querycarcount(uid);
 	}
 }

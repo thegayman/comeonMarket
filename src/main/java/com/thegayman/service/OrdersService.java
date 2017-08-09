@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.thegayman.model.OrderItem;
 import com.thegayman.model.Orders;
+import com.thegayman.mapper.OrderitemMapper;
 import com.thegayman.mapper.OrdersMapper;
+import com.thegayman.mapper.ShoppingCartMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -21,10 +24,20 @@ public class OrdersService {
 
 	@Autowired
 	private OrdersMapper ordersMapper;
-
-	public void save(Orders order) {
+	@Autowired
+	private OrderitemMapper orderitemMapper;
+	@Autowired
+	private ShoppingCartMapper shoppingCartMapper;
+	/**
+	 * 加入订单详情,再加入订单
+	 * @param order
+	 * @param orderList
+	 */
+	public void save(Orders order,List<OrderItem> orderList) {
 		// TODO Auto-generated method stub
-		this.ordersMapper.insert();
+		this.ordersMapper.insert(order);
+		this.orderitemMapper.insert(orderList);
+		shoppingCartMapper.del(order.getOid(),order.getPid());
 	}
 
 	public List<Orders> queryByUserId(String userid) {

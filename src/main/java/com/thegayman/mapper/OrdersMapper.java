@@ -1,6 +1,11 @@
 package com.thegayman.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
+
+import com.thegayman.model.OrderItem;
+import com.thegayman.model.Orders;
  
 
 /**
@@ -11,7 +16,7 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface OrdersMapper  {
 
-	void insert();
+	void insert(Orders order);
 	
 	/**
 	 * 按id一次删除多条数据

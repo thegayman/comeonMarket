@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.thegayman.model.OrderAll;
 import com.thegayman.model.Product;
 import com.thegayman.model.ShoppingCart;
 
@@ -38,5 +39,17 @@ public interface ShoppingCartMapper  {
 	 * @param uid
 	 * @return
 	 */
-	public List<Map<String, Object>> show(@Param("uid")int uid);
+	public List<OrderAll> show(@Param("uid")int uid);
+	/**
+	 * 查询购物车所有商品数量
+	 * @param id
+	 * @return
+	 */
+	public int querycarcount(@Param("uid")int uid);
+	/**
+	 * 根据订单id删除购物车内容
+	 * @param oid
+	 * @return
+	 */
+	public int del(@Param("oid")int oid,@Param("pid")int pid);
 }

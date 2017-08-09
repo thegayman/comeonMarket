@@ -2,6 +2,7 @@ package com.thegayman.service;
 
 import org.springframework.stereotype.Service;
 
+import com.thegayman.model.OrderAll;
 import com.thegayman.model.Product;
 import com.thegayman.model.ShoppingCart;
 import com.thegayman.mapper.ShoppingCartMapper;
@@ -35,8 +36,15 @@ public class ShoppingCartService   {
 			return shoppingCartMapper.add(shoppingCart);
 		}
 	}
-	public List<Map<String, Object>> show(int uid) {		
+	/**
+	 * 查询购物车中所有商品
+	 * @param uid
+	 * @return
+	 */
+	public List<OrderAll> show(int uid) {		
 		return shoppingCartMapper.show(uid);
 	}
-
+	public int querycarcount(int uid) {
+		return shoppingCartMapper.querycarcount(uid);
+	}
 }

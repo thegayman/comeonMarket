@@ -2,7 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.thegayman.mapper.OrderitemMapper">
-	
+	<insert id="insert" parameterType="map" >
+	    insert into orderitem (itemId,pid,oid,count,itemTotal)   
+	    values  
+	    <foreach collection="list" item="item" index="index" separator="," >  
+	        (#{item.itemId},#{item.pid},#{item.oid},#{item.count},#{item.itemTotal})  
+	    </foreach>
+    </insert>
  
     
 </mapper>

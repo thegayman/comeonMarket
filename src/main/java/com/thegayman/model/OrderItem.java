@@ -22,8 +22,8 @@ public class OrderItem implements Serializable {
 	private int itemId;
 	private int count;                                         /*每件商品的购买数量*/
 	private double itemTotal;                                  /*每件商品的数额*/
-	private List<Product> plist = new ArrayList<Product>();    /*一个订单明细表可以有多个商品*/
-	private Order order;                                       /*一个订单明细表只属于一个订单*/
+	private int pid;   										/*一个订单明细表可以有多个商品*/
+	private int oid;                                       /*一个订单明细表只属于一个订单*/
 	
 	public int getItemId() {
 		return itemId;
@@ -43,17 +43,18 @@ public class OrderItem implements Serializable {
 	public void setItemTotal(double itemTotal) {
 		this.itemTotal = itemTotal;
 	}
-	public List<Product> getPlist() {
-		return plist;
+	
+	public int getPid() {
+		return pid;
 	}
-	public void setPlist(List<Product> plist) {
-		this.plist = plist;
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
-	public Order getOrder() {
-		return order;
+	public int getOid() {
+		return oid;
 	}
-	public void setOrder(Order order) {
-		this.order = order;
+	public void setOid(int oid) {
+		this.oid = oid;
 	}
 	
 	

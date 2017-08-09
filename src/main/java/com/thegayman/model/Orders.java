@@ -28,7 +28,7 @@ public class Orders implements Serializable {
 	private String name;         //用户名字
 	private String phone;        //用 户电话
 	private String address;      //用户地址
-	private User user;           //订单所属用户
+	private int pid;         //订单所属用户
 	public int getOid() {
 		return oid;
 	}
@@ -71,11 +71,11 @@ public class Orders implements Serializable {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public User getUser() {
-		return user;
+	public int getPid() {
+		return pid;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
 	
 	

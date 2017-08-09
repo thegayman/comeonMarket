@@ -8,6 +8,7 @@
 			#{resourceid}
 		</foreach>
 	</delete>
- 
-    
+ 	<insert id="insert" parameterType="com.thegayman.model.Orders" >
+       	insert into orders(oid,uid,orderTotal,orderTime,state,name,phone,address) values(#{oid},#{pid},#{orderTotal},#{orderTime},#{state},#{name},#{phone},#{address})
+    </insert>
 </mapper>
